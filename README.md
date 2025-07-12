@@ -10,12 +10,12 @@
 
 ### Hi there 👋, I'm Matheus Kaiky!
 
-I'm a Computer Science student from Brazil 🇧🇷, passionate about solving real-world problems through technology. I love exploring new tools and building applications that can make a difference.
+I'm currently a Computer Science student at the Federal University of Piauí, passionate about solving real-world problems through technology. I enjoy exploring new tools and building applications that can make a difference.
 
 * 🌱 I’m currently learning more about **Cloud-Native architectures** and **AI integration**.
 * 🚀 I’m focused on building **[Gupyfy](https://github.com/matheuskaiky/Gupyfy)**, a smart job hunting assistant.
 * 💬 Ask me about **Java, Spring Boot, Python, and software architecture**.
-* 📫 How to reach me: **[LinkedIn](https://www.linkedin.com/in/seu-linkedin-aqui/)**
+* 📫 How to reach me: **[LinkedIn](https://www.linkedin.com/in/matheuskaiky/)**
 
 <br>
 
@@ -64,12 +64,12 @@ I'm a Computer Science student from Brazil 🇧🇷, passionate about solving re
   <h3>Olá! 👋 Eu sou o Matheus Kaiky!</h3>
 </div>
 
-Eu sou um estudante de Ciência da Computação do Brasil 🇧🇷, apaixonado por resolver problemas do mundo real através da tecnologia. Adoro explorar novas ferramentas e construir aplicações que podem fazer a diferença.
+Atualmente sou estudante de Ciência da Computação na Universidade Federal do Piauí, apaixonado por resolver problemas do mundo real através da tecnologia. Gosto de explorar novas ferramentas e construir aplicações que podem fazer a diferença.
 
 * 🌱 Atualmente estou aprendendo mais sobre **arquiteturas Cloud-Native** e **integração com IA**.
 * 🚀 Estou focado em construir o **[Gupyfy](https://github.com/matheuskaiky/Gupyfy)**, um assistente inteligente para busca de vagas.
 * 💬 Me pergunte sobre **Java, Spring Boot, Python e arquitetura de software**.
-* 📫 Como me encontrar: **[LinkedIn](https://www.linkedin.com/in/seu-linkedin-aqui/)**
+* 📫 Como me encontrar: **[LinkedIn](https://www.linkedin.com/in/matheuskaiky/)**
 
 <br>
 
