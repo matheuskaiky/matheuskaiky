@@ -15,23 +15,16 @@ I'm a Computer Science student at the Federal University of Piauí passionate ab
 ## 🚀 Current Work
 
 ### **Termo Fácil** – Intelligent Deposition Statement Generator
-**Status:** 🔴 Active Development (PIBITI Research Grant)
-
+**Status:** 🔴 Active Development (PIBITI Research Grant — Brazil's national undergraduate research program, funded by Federal University of Piauí)
 An **AI-powered system** for the Piauí Public Security Department that intelligently transcribes, extracts entities, and synthesizes police deposition statements with absolute **juridical traceability**.
 
 **Key Architecture:**
 - **ASR Layer** (Whisper Turbo / Parakeet TDT) → Speech-to-text with diarization
 - **NER Layer** (LeNER-Br / BERT) → Fact-locking, entity extraction (names, dates, locations, laws)
 - **LLM Layer** (vLLM, Ollama) → Deterministic synthesis (Temperature 0.0, on-premise)
-- **Compliance:** 100% on-premise (Air-gapped), LGPD-compliant, zero cloud APIs
-
+- **Compliance:** 100% on-premise (Air-gapped), zero cloud APIs — required by Brazil's LGPD (data protection law, analogous to GDPR)
+  
 **Tech Stack:** `Python 3.11` | `FastAPI` | `HuggingFace Transformers` | `Redis/Celery` | `MinIO` | `Docker` | `WireGuard VPN` | `HPC Mandu (Supercomputer)`
-
-**Docs & Specs:**
-- [Especificação de Requisitos (ERS)](./docs/1-ersw-pibiti.pdf)
-- [Product Backlog & User Stories](./docs/2-backlog-pibiti.pdf)
-- [UX/UI & Design System](./docs/3-ui-ux-pibiti.pdf)
-- [Architecture & System Design (C4, DER, ADR)](./docs/4-arquitetura-pibiti.pdf)
 
 ---
 
@@ -49,7 +42,7 @@ A full-stack application that uses **generative AI to automate job discovery** o
 
 **Tech Stack:** `Java 17+` | `Spring Boot 3` | `React 18` | `Vite` | `Tailwind CSS` | `PostgreSQL` | `n8n` | `OkHttp` | `Maven`
 
-**Repository:** [github.com/matheuskaiky/Gupyfy](https://github.com/matheuskaiky/Gupyfy)
+[**Repository**](https://github.com/matheuskaiky/Gupyfy)
 
 ---
 
@@ -57,6 +50,8 @@ A full-stack application that uses **generative AI to automate job discovery** o
 **Status:** 🟡 Research Phase
 
 Exploring AI techniques for digital forensics and investigative intelligence within governmental constraints.
+
+[**Repository**](https://github.com/matheuskaiky/tcc-ia-forense)
 
 ## 🛠️ Tech Stack & Skills
 
@@ -144,14 +139,18 @@ Exploring AI techniques for digital forensics and investigative intelligence wit
 
 ## 💡 Development Philosophy
 
-I believe in **pragmatic AI-assisted development**: leveraging Claude Code and modern LLMs as productivity multipliers while maintaining **deep understanding** of architecture, trade-offs, and system design. Not "just prompts" — but **thoughtful engineering accelerated by intelligent tooling**.
+I'm a **top-down, visual thinker**: I need the big picture before the details, and I absorb architecture through diagrams and structure rather than isolated syntax rules. This shapes how I build, study, and use AI tooling.
+
+I believe in **pragmatic AI-assisted development**: leveraging Claude Code and modern LLMs as productivity multipliers while maintaining **deep understanding** of architecture, trade-offs, and system design. Not "just prompts", but **thoughtful engineering accelerated by intelligent tooling**.
 
 My approach:
+- ✅ Big picture first — context before implementation (top-down always)
 - ✅ Architecture-first design (C4 models, ADRs, system thinking)
-- ✅ Prompt engineering as a *professional skill* (not a shortcut)
+- ✅ Prompt engineering as a *professional skill*, not a shortcut — including how I learn
 - ✅ Code generation + human judgment (not blind automation)
+- ✅ Low-friction iteration: working code fast, complexity layered in gradually
 - ✅ Testing, documentation, and security by default
-
+  
 ## 📫 Get in Touch
 
 - **LinkedIn:** [matheuskaiky](https://www.linkedin.com/in/matheuskaiky/)
@@ -169,7 +168,7 @@ Sou estudante de Ciência da Computação na Universidade Federal do Piauí, apa
 ## 🚀 Projetos em Andamento
 
 ### **Termo Fácil** – Gerador Inteligente de Termos de Depoimento
-**Status:** 🔴 Desenvolvimento Ativo (Bolsa PIBITI)
+**Status:** 🔴 Desenvolvimento Ativo (PIBITI/UFPI — Programa Institucional de Bolsas de Iniciação em Desenvolvimento Tecnológico e Inovação)
 
 Um **sistema alimentado por IA** para a Secretaria de Segurança Pública do Piauí que transcreve, extrai entidades e sintetiza inteligentemente termos de depoimento policial com **rastreabilidade jurídica absoluta**.
 
@@ -197,7 +196,7 @@ Uma aplicação full-stack que utiliza **IA generativa para automatizar a descob
 
 **Tech Stack:** `Java 17+` | `Spring Boot 3` | `React 18` | `Vite` | `Tailwind CSS` | `PostgreSQL` | `n8n` | `OkHttp` | `Maven`
 
-**Repositório:** [github.com/matheuskaiky/Gupyfy](https://github.com/matheuskaiky/Gupyfy)
+[**Repositório**](https://github.com/matheuskaiky/Gupyfy)
 
 ---
 
@@ -205,6 +204,8 @@ Uma aplicação full-stack que utiliza **IA generativa para automatizar a descob
 **Status:** 🟡 Fase de Pesquisa
 
 Explorando técnicas de IA para perícia digital e inteligência investigativa dentro de restrições governamentais.
+
+[**Repositório**](https://github.com/matheuskaiky/tcc-ia-forense)
 
 ## 🛠️ Tech Stack & Habilidades
 
@@ -292,12 +293,16 @@ Explorando técnicas de IA para perícia digital e inteligência investigativa d
 
 ## 💡 Filosofia de Desenvolvimento
 
-Acredito em **desenvolvimento pragmático assistido por IA**: aproveitando Claude Code e LLMs modernos como multiplicadores de produtividade enquanto mantenho **compreensão profunda** de arquitetura, trade-offs e design de sistemas. Não é "apenas prompts" — mas **engenharia pensada acelerada por ferramentas inteligentes**.
+Sou um **pensador top-down e visual**: preciso do contexto macro antes dos detalhes, e absorvo arquitetura por meio de diagramas e estrutura, não por listas de comandos soltos. Isso molda como construo, como estudo e como uso ferramentas de IA.
+
+Acredito em **desenvolvimento pragmático assistido por IA**: aproveitando Claude Code e LLMs modernos como multiplicadores de produtividade enquanto mantenho **compreensão profunda** de arquitetura, trade-offs e design de sistemas. Não é "apenas prompts", mas **engenharia pensada acelerada por ferramentas inteligentes**.
 
 Minha abordagem:
+- ✅ Contexto antes da implementação — quadro geral sempre primeiro
 - ✅ Design arquitetural primeiro (modelos C4, ADRs, pensamento sistêmico)
-- ✅ Engenharia de prompts como uma *habilidade profissional* (não um atalho)
+- ✅ Engenharia de prompts como *habilidade profissional*, não atalho — inclusive no aprendizado
 - ✅ Geração de código + julgamento humano (não automação cega)
+- ✅ Iteração de baixo atrito: código funcionando rápido, complexidade adicionada em camadas
 - ✅ Testes, documentação e segurança por padrão
 
 ## 📫 Entre em Contato
