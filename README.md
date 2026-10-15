@@ -8,305 +8,60 @@
   </a>
 </div>
 
-### Hi there 👋, I'm Matheus Kaiky!
+# Matheus Kaiky
 
-I'm a Computer Science student at the Federal University of Piauí passionate about **AI-driven automation** and **building systems that solve real governmental problems**. Currently focused on intelligent document generation, cloud-native architectures, and leveraging modern AI tooling for rapid, high-quality development.
+Computer Science student at the Federal University of Piauí (UFPI), Brazil. Software engineer with a focus on applied AI: backend systems, NLP pipelines and LLM applications that run on-premise for government and privacy-sensitive use cases.
 
-## 🚀 Current Work
+[LinkedIn](https://www.linkedin.com/in/matheuskaiky/)
 
-### **Termo Fácil** – Intelligent Deposition Statement Generator
-**Status:** 🔴 Active Development (PIBITI Research Grant — Brazil's national undergraduate research program, funded by Federal University of Piauí)
-An **AI-powered system** for the Piauí Public Security Department that intelligently transcribes, extracts entities, and synthesizes police deposition statements with absolute **juridical traceability**.
+## Experience
 
-**Key Architecture:**
-- **ASR Layer** (Whisper Turbo / Parakeet TDT) → Speech-to-text with diarization
-- **NER Layer** (LeNER-Br / BERT) → Fact-locking, entity extraction (names, dates, locations, laws)
-- **LLM Layer** (vLLM, Ollama) → Deterministic synthesis (Temperature 0.0, on-premise)
-- **Compliance:** 100% on-premise (Air-gapped), zero cloud APIs — required by Brazil's LGPD (data protection law, analogous to GDPR)
-  
-**Tech Stack:** `Python 3.11` | `FastAPI` | `HuggingFace Transformers` | `Redis/Celery` | `MinIO` | `Docker` | `WireGuard VPN` | `HPC Mandu (Supercomputer)`
+**Undergraduate Researcher, PIBITI (UFPI), Brazil's national undergraduate technology and innovation research program**
+Designed and built Termo Fácil (below) for the Piauí Public Security Department (SSP-PI). The research grant has ended. The system was delivered and demonstrated to SSP-PI.
 
----
+## Projects
 
-### **Gupyfy** – AI-Powered Job Search Automation
-**Status:** 🟠 Paused (architecture stable)
+### [Termo Fácil](https://github.com/matheuskaiky/termo-facil): Deposition Statement Generator
+Event-driven, on-premise system that transcribes police deposition audio and drafts the written statement (*termo de depoimento*) for SSP-PI. Built for PIBITI; delivered and demonstrated to SSP-PI.
 
-A full-stack application that uses **generative AI to automate job discovery** on the Gupy platform. Demonstrates production-grade architecture for AI integration, asynchronous job processing, and end-to-end automation.
+- Pipeline: Whisper (ASR) → pyannote speaker diarization → LeNER-Br (legal NER) → local LLM via Ollama or vLLM at temperature 0.0, with the LLM output anchored to the extracted entities.
+- Asynchronous processing with Celery and Redis, audio stored in MinIO and purged for LGPD (Brazil's data protection law) compliance, state in PostgreSQL.
+- Runs fully on-premise, with no cloud APIs. Deployable with Docker or on an HPC cluster without Docker or sudo.
+- FastAPI backend, Angular 17 frontend, 21 documented development phases.
 
-**Key Features:**
-- RESTful API with Spring Boot 3 + Spring Data JPA
-- React SPA with advanced filtering and real-time updates
-- AI matching engine (Google Gemini / OpenAI integration)
-- Workflow automation via n8n for smart notifications (Telegram, Discord, Email)
-- Job scheduling with asynchronous processing (background workers)
+`Python` `FastAPI` `Celery` `Redis` `PostgreSQL` `MinIO` `Angular` `Docker` `Hugging Face` `Whisper` `Ollama` `vLLM`
 
-**Tech Stack:** `Java 17+` | `Spring Boot 3` | `React 18` | `Vite` | `Tailwind CSS` | `PostgreSQL` | `n8n` | `OkHttp` | `Maven`
+### [llm-finetuning](https://github.com/matheuskaiky/llm-finetuning): LLM Lifecycle for Public-Sector Data
+End-to-end LLM project for the course *Tópicos em IA* (UFPI, 2026.1), using Piauí municipal gazettes and faculty data. Everything is driven by YAML configs, so models and methods can be swapped without changing code.
 
-[**Repository**](https://github.com/matheuskaiky/Gupyfy)
+- Continued pre-training, SFT, LoRA/QLoRA, knowledge distillation, a RAG assistant (standard, agentic and GraphRAG) and a rule-based guardrails layer.
+- LoRA matched or beat full SFT while training about 1.7% of the parameters. Guardrails went from 0% to 100% blocking of adversarial prompts and PII on a synthetic benchmark.
+- Trained and evaluated on 2x NVIDIA L4 GPUs. Benchmark references were generated with AI assistance, and a hand-written gold set is planned.
 
----
+`Python` `PyTorch` `Transformers` `PEFT/TRL` `LangChain` `FAISS` `uv` `pytest`
 
-### **TCC: IA Forense** – Forensic Intelligence (thesis-in-progress)
-**Status:** 🟡 Research Phase
+### [Finanças Pessoais](https://github.com/matheuskaiky/financas-pessoais): Local-First Personal Finance
+Private finance manager covering accounts, credit cards with invoices and installments, and fixed-income investments. Data stays in a local SQLite database, and the server listens only on localhost.
 
-Exploring AI techniques for digital forensics and investigative intelligence within governmental constraints.
+- Layered architecture (domain, application, infrastructure, interfaces), with layer rules enforced by import-linter.
+- More than 1,300 tests, with static checks using ruff and pyright.
+- Server-rendered with FastAPI, Jinja2 and HTMX, with no frontend build step.
 
-[**Repository**](https://github.com/matheuskaiky/tcc-ia-forense)
+`Python` `FastAPI` `SQLAlchemy` `Alembic` `SQLite` `HTMX` `pytest`
 
-## 🛠️ Tech Stack & Skills
+### [Gupyfy](https://github.com/matheuskaiky/Gupyfy): Job Search Automation (paused)
+Full-stack app that uses generative AI to match job postings from Gupy to a candidate profile and sends notifications through n8n workflows.
 
-### **AI/ML & Prompt Engineering**
-<p align="left">
-  <a href="https://www.anthropic.com/claude" target="_blank" rel="noreferrer">
-    <img src="https://img.shields.io/badge/Claude_AI-ED8B00?style=for-the-badge&logo=anthropic&logoColor=white" alt="Claude AI"/>
-  </a>
-  <a href="https://github.com/features/copilot" target="_blank" rel="noreferrer">
-    <img src="https://img.shields.io/badge/Claude_Code-121212?style=for-the-badge&logo=github-copilot&logoColor=white" alt="Claude Code"/>
-  </a>
-  <a href="https://www.langchain.com/" target="_blank" rel="noreferrer">
-    <img src="https://img.shields.io/badge/LangChain-1C3C3C?style=for-the-badge&logo=chainlink&logoColor=white" alt="LangChain"/>
-  </a>
-  <a href="https://huggingface.co/" target="_blank" rel="noreferrer">
-    <img src="https://img.shields.io/badge/HuggingFace-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black" alt="HuggingFace"/>
-  </a>
-</p>
+`Java 17` `Spring Boot 3` `React` `PostgreSQL` `n8n` `Gemini / OpenAI APIs`
 
-### **Backend & Infrastructure**
-<p align="left">
-  <a href="https://www.python.org" target="_blank" rel="noreferrer">
-    <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"/>
-  </a>
-  <a href="https://fastapi.tiangolo.com/" target="_blank" rel="noreferrer">
-    <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI"/>
-  </a>
-  <a href="https://www.java.com" target="_blank" rel="noreferrer">
-    <img src="https://img.shields.io/badge/Java_17+-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java"/>
-  </a>
-  <a href="https://spring.io/projects/spring-boot" target="_blank" rel="noreferrer">
-    <img src="https://img.shields.io/badge/Spring_Boot_3-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white" alt="Spring Boot"/>
-  </a>
-  <a href="https://spring.io/projects/spring-data" target="_blank" rel="noreferrer">
-    <img src="https://img.shields.io/badge/Spring_Data_JPA-6DB33F?style=for-the-badge&logo=spring&logoColor=white" alt="Spring Data JPA"/>
-  </a>
-  <a href="https://www.docker.com/" target="_blank" rel="noreferrer">
-    <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker"/>
-  </a>
-  <a href="https://www.postgresql.org/" target="_blank" rel="noreferrer">
-    <img src="https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL"/>
-  </a>
-  <a href="https://redis.io/" target="_blank" rel="noreferrer">
-    <img src="https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white" alt="Redis"/>
-  </a>
-  <a href="https://maven.apache.org/" target="_blank" rel="noreferrer">
-    <img src="https://img.shields.io/badge/Maven-C71A36?style=for-the-badge&logo=apache-maven&logoColor=white" alt="Maven"/>
-  </a>
-  <a href="https://n8n.io/" target="_blank" rel="noreferrer">
-    <img src="https://img.shields.io/badge/n8n-121212?style=for-the-badge&logo=n8n&logoColor=white" alt="n8n"/>
-  </a>
-</p>
+## Skills
 
-### **Frontend & Design**
-<p align="left">
-  <a href="https://reactjs.org/" target="_blank" rel="noreferrer">
-    <img src="https://img.shields.io/badge/React_18+-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React"/>
-  </a>
-  <a href="https://vitejs.dev/" target="_blank" rel="noreferrer">
-    <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite"/>
-  </a>
-  <a href="https://tailwindcss.com/" target="_blank" rel="noreferrer">
-    <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS"/>
-  </a>
-  <a href="https://axios-http.com/" target="_blank" rel="noreferrer">
-    <img src="https://img.shields.io/badge/Axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white" alt="Axios"/>
-  </a>
-  <a href="https://www.figma.com/" target="_blank" rel="noreferrer">
-    <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white" alt="Figma"/>
-  </a>
-</p>
+- **Languages:** Python, Java, TypeScript/JavaScript, SQL, Bash
+- **Backend:** FastAPI, Spring Boot, Celery, REST APIs, PostgreSQL, Redis, SQLAlchemy
+- **AI/ML:** LLM fine-tuning (SFT, LoRA/QLoRA), RAG, NLP/NER, speech recognition, Hugging Face, LangChain, vLLM, Ollama
+- **Frontend:** Angular, React, HTMX, Tailwind CSS
+- **Tools and practices:** Docker, Git, Linux, HPC clusters, pytest, clean architecture
 
-### **DevOps & Cloud**
-<p align="left">
-  <a href="https://kubernetes.io/" target="_blank" rel="noreferrer">
-    <img src="https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white" alt="Kubernetes"/>
-  </a>
-  <a href="https://git-scm.com/" target="_blank" rel="noreferrer">
-    <img src="https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white" alt="Git"/>
-  </a>
-  <a href="https://www.gnu.org/software/bash/" target="_blank" rel="noreferrer">
-    <img src="https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white" alt="Bash"/>
-  </a>
-</p>
+## Education
 
-## 💡 Development Philosophy
-
-I'm a **top-down, visual thinker**: I need the big picture before the details, and I absorb architecture through diagrams and structure rather than isolated syntax rules. This shapes how I build, study, and use AI tooling.
-
-I believe in **pragmatic AI-assisted development**: leveraging Claude Code and modern LLMs as productivity multipliers while maintaining **deep understanding** of architecture, trade-offs, and system design. Not "just prompts", but **thoughtful engineering accelerated by intelligent tooling**.
-
-My approach:
-- ✅ Big picture first — context before implementation (top-down always)
-- ✅ Architecture-first design (C4 models, ADRs, system thinking)
-- ✅ Prompt engineering as a *professional skill*, not a shortcut — including how I learn
-- ✅ Code generation + human judgment (not blind automation)
-- ✅ Low-friction iteration: working code fast, complexity layered in gradually
-- ✅ Testing, documentation, and security by default
-  
-## 📫 Get in Touch
-
-- **LinkedIn:** [matheuskaiky](https://www.linkedin.com/in/matheuskaiky/)
-- **GitHub:** [@matheuskaiky](https://github.com/matheuskaiky)
-- **Email:** Through LinkedIn DMs
-
----
-
-<div align="center">
-  <h3>Olá! 👋 Eu sou o Matheus Kaiky!</h3>
-</div>
-
-Sou estudante de Ciência da Computação na Universidade Federal do Piauí, apaixonado por **automação inteligente com IA** e **construir sistemas que resolvem problemas reais do governo**. Atualmente focado em geração inteligente de documentos, arquiteturas cloud-native e aproveitando ferramentas modernas de IA para desenvolvimento rápido e de alta qualidade.
-
-## 🚀 Projetos em Andamento
-
-### **Termo Fácil** – Gerador Inteligente de Termos de Depoimento
-**Status:** 🔴 Desenvolvimento Ativo (PIBITI/UFPI — Programa Institucional de Bolsas de Iniciação em Desenvolvimento Tecnológico e Inovação)
-
-Um **sistema alimentado por IA** para a Secretaria de Segurança Pública do Piauí que transcreve, extrai entidades e sintetiza inteligentemente termos de depoimento policial com **rastreabilidade jurídica absoluta**.
-
-**Arquitetura Principal:**
-- **Camada ASR** (Whisper Turbo / Parakeet TDT) → Fala para texto com diarização
-- **Camada NER** (LeNER-Br / BERT) → Blindagem de fatos, extração de entidades
-- **Camada LLM** (vLLM, Ollama) → Síntese determinística (Temperature 0.0, on-premise)
-- **Compliance:** 100% on-premise (Air-gapped), LGPD-compliant, zero APIs nuvem
-
-**Tech Stack:** `Python 3.11` | `FastAPI` | `HuggingFace Transformers` | `Redis/Celery` | `MinIO` | `Docker` | `WireGuard VPN` | `HPC Mandu`
-
----
-
-### **Gupyfy** – Automação Inteligente de Busca de Vagas
-**Status:** 🟠 Pausado (arquitetura estável)
-
-Uma aplicação full-stack que utiliza **IA generativa para automatizar a descoberta de vagas** na plataforma Gupy. Demonstra arquitetura de produção para integração com IA, processamento assíncrono de jobs e automação end-to-end.
-
-**Principais Funcionalidades:**
-- API RESTful com Spring Boot 3 + Spring Data JPA
-- SPA React com filtros avançados e atualizações em tempo real
-- Engine de matching com IA (integração Google Gemini / OpenAI)
-- Automação de workflows via n8n para notificações inteligentes (Telegram, Discord, Email)
-- Agendamento de jobs com processamento assíncrono (workers em background)
-
-**Tech Stack:** `Java 17+` | `Spring Boot 3` | `React 18` | `Vite` | `Tailwind CSS` | `PostgreSQL` | `n8n` | `OkHttp` | `Maven`
-
-[**Repositório**](https://github.com/matheuskaiky/Gupyfy)
-
----
-
-### **TCC: IA Forense** – Inteligência para Perícia Digital
-**Status:** 🟡 Fase de Pesquisa
-
-Explorando técnicas de IA para perícia digital e inteligência investigativa dentro de restrições governamentais.
-
-[**Repositório**](https://github.com/matheuskaiky/tcc-ia-forense)
-
-## 🛠️ Tech Stack & Habilidades
-
-### **IA/ML & Engenharia de Prompts**
-<p align="left">
-  <a href="https://www.anthropic.com/claude" target="_blank" rel="noreferrer">
-    <img src="https://img.shields.io/badge/Claude_AI-ED8B00?style=for-the-badge&logo=anthropic&logoColor=white" alt="Claude AI"/>
-  </a>
-  <a href="https://github.com/features/copilot" target="_blank" rel="noreferrer">
-    <img src="https://img.shields.io/badge/Claude_Code-121212?style=for-the-badge&logo=github-copilot&logoColor=white" alt="Claude Code"/>
-  </a>
-  <a href="https://www.langchain.com/" target="_blank" rel="noreferrer">
-    <img src="https://img.shields.io/badge/LangChain-1C3C3C?style=for-the-badge&logo=chainlink&logoColor=white" alt="LangChain"/>
-  </a>
-  <a href="https://huggingface.co/" target="_blank" rel="noreferrer">
-    <img src="https://img.shields.io/badge/HuggingFace-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black" alt="HuggingFace"/>
-  </a>
-</p>
-
-### **Backend & Infraestrutura**
-<p align="left">
-  <a href="https://www.python.org" target="_blank" rel="noreferrer">
-    <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"/>
-  </a>
-  <a href="https://fastapi.tiangolo.com/" target="_blank" rel="noreferrer">
-    <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI"/>
-  </a>
-  <a href="https://www.java.com" target="_blank" rel="noreferrer">
-    <img src="https://img.shields.io/badge/Java_17+-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java"/>
-  </a>
-  <a href="https://spring.io/projects/spring-boot" target="_blank" rel="noreferrer">
-    <img src="https://img.shields.io/badge/Spring_Boot_3-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white" alt="Spring Boot"/>
-  </a>
-  <a href="https://spring.io/projects/spring-data" target="_blank" rel="noreferrer">
-    <img src="https://img.shields.io/badge/Spring_Data_JPA-6DB33F?style=for-the-badge&logo=spring&logoColor=white" alt="Spring Data JPA"/>
-  </a>
-  <a href="https://www.docker.com/" target="_blank" rel="noreferrer">
-    <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker"/>
-  </a>
-  <a href="https://www.postgresql.org/" target="_blank" rel="noreferrer">
-    <img src="https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL"/>
-  </a>
-  <a href="https://redis.io/" target="_blank" rel="noreferrer">
-    <img src="https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white" alt="Redis"/>
-  </a>
-  <a href="https://maven.apache.org/" target="_blank" rel="noreferrer">
-    <img src="https://img.shields.io/badge/Maven-C71A36?style=for-the-badge&logo=apache-maven&logoColor=white" alt="Maven"/>
-  </a>
-  <a href="https://n8n.io/" target="_blank" rel="noreferrer">
-    <img src="https://img.shields.io/badge/n8n-121212?style=for-the-badge&logo=n8n&logoColor=white" alt="n8n"/>
-  </a>
-</p>
-
-### **Frontend & Design**
-<p align="left">
-  <a href="https://reactjs.org/" target="_blank" rel="noreferrer">
-    <img src="https://img.shields.io/badge/React_18+-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React"/>
-  </a>
-  <a href="https://vitejs.dev/" target="_blank" rel="noreferrer">
-    <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite"/>
-  </a>
-  <a href="https://tailwindcss.com/" target="_blank" rel="noreferrer">
-    <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS"/>
-  </a>
-  <a href="https://axios-http.com/" target="_blank" rel="noreferrer">
-    <img src="https://img.shields.io/badge/Axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white" alt="Axios"/>
-  </a>
-  <a href="https://www.figma.com/" target="_blank" rel="noreferrer">
-    <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white" alt="Figma"/>
-  </a>
-</p>
-
-### **DevOps & Cloud**
-<p align="left">
-  <a href="https://kubernetes.io/" target="_blank" rel="noreferrer">
-    <img src="https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white" alt="Kubernetes"/>
-  </a>
-  <a href="https://git-scm.com/" target="_blank" rel="noreferrer">
-    <img src="https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white" alt="Git"/>
-  </a>
-  <a href="https://www.gnu.org/software/bash/" target="_blank" rel="noreferrer">
-    <img src="https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white" alt="Bash"/>
-  </a>
-</p>
-
-## 💡 Filosofia de Desenvolvimento
-
-Sou um **pensador top-down e visual**: preciso do contexto macro antes dos detalhes, e absorvo arquitetura por meio de diagramas e estrutura, não por listas de comandos soltos. Isso molda como construo, como estudo e como uso ferramentas de IA.
-
-Acredito em **desenvolvimento pragmático assistido por IA**: aproveitando Claude Code e LLMs modernos como multiplicadores de produtividade enquanto mantenho **compreensão profunda** de arquitetura, trade-offs e design de sistemas. Não é "apenas prompts", mas **engenharia pensada acelerada por ferramentas inteligentes**.
-
-Minha abordagem:
-- ✅ Contexto antes da implementação — quadro geral sempre primeiro
-- ✅ Design arquitetural primeiro (modelos C4, ADRs, pensamento sistêmico)
-- ✅ Engenharia de prompts como *habilidade profissional*, não atalho — inclusive no aprendizado
-- ✅ Geração de código + julgamento humano (não automação cega)
-- ✅ Iteração de baixo atrito: código funcionando rápido, complexidade adicionada em camadas
-- ✅ Testes, documentação e segurança por padrão
-
-## 📫 Entre em Contato
-
-- **LinkedIn:** [matheuskaiky](https://www.linkedin.com/in/matheuskaiky/)
-- **GitHub:** [@matheuskaiky](https://github.com/matheuskaiky)
-- **Email:** Através de DMs no LinkedIn
+**B.Sc. in Computer Science**, Federal University of Piauí (UFPI), Brazil
